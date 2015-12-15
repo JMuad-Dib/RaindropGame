@@ -1,5 +1,5 @@
 //define the number of raindrops the code will produce
-int count = 1;
+int count = 900;
 
 PVector mouse;   //declare a P
 Raindrop [] r = new Raindrop[count];      //declare a new Raindrop called r
@@ -13,12 +13,9 @@ void setup() {
   size(1200, 800);
   mouse = new PVector();                //initialize mouse PVector. value is irrelevant since it will be set at the start of void draw(){}
   
-  r[i] = new Raindrop();   //Initialize r. The parameters used are the initial x and y positions
-  
   //draw a number of raindrops equal to the count interger
-  int i = 0;
-  while(i < count){
-    i++;
+  for(int i = 0; i < count; i++){
+    r[i] = new Raindrop();   //Initialize r. The parameters used are the initial x and y positions
   }
 }
 
