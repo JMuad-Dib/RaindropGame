@@ -3,6 +3,7 @@ int count = 900;
 
 PVector mouse, posP;   //declare a vector at the mouse and another for the person's position
 Raindrop [] r = new Raindrop[count];      //declare a new Raindrop called r
+Bucket b = new Bucket();
 
 // On your own, create an array of Raindrop objects instead of just one
 // Use the array instead of the single object
@@ -21,6 +22,8 @@ void setup() {
 
 void draw() {
   mouse.set(mouseX, mouseY);             //set value of mouse as mouseX,mouseY
+  
+  b.display();
   
   background(0, 200, 255);
   for(int i = 0; i < count; i++){
