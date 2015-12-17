@@ -22,6 +22,7 @@ class Raindrop {
     fill(c);
     stroke(c);
     ellipse(loc.x,loc.y,diam,diam);
+    triangle(loc.x - diam/2, loc.y, loc.x + diam/2, loc.y, loc.x, loc.y - diam);
   }
   
   void reset() {

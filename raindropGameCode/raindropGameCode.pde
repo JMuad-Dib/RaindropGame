@@ -1,7 +1,7 @@
 //define the number of raindrops the code will produce
 int count = 900;
 
-PVector mouse;   //declare a P
+PVector mouse, posP;   //declare a vector at the mouse and another for the person's position
 Raindrop [] r = new Raindrop[count];      //declare a new Raindrop called r
 
 // On your own, create an array of Raindrop objects instead of just one
@@ -21,6 +21,7 @@ void setup() {
 
 void draw() {
   mouse.set(mouseX, mouseY);             //set value of mouse as mouseX,mouseY
+  
   background(0, 200, 255);
   for(int i = 0; i < count; i++){
     r[i].fall();         //make the raindrop fall. It should accelerate as if pulled towards the ground by earth's gravity
