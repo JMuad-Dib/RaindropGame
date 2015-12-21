@@ -23,4 +23,3 @@ class Bucket{
     //quad(loc.x - wd/2, loc.y - ht/2, loc.x + wd/2, loc.y - ht/2, loc.x - wd/2 + 5, loc.y + ht/2, loc.x + wd/2 - 5, loc.y + ht/2);
     quad(mouseX - wd/2, mouseY - ht/2, mouseX + wd/2, mouseY - ht/2, mouseX + wd/2 - 5, mouseY + ht/2, mouseX - wd/2 + 5, mouseY + ht/2);
   }
-}

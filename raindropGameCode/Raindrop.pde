@@ -42,4 +42,12 @@ class Raindrop {
       return false;
     }
   }
-}
+  
+  boolean onGround(){
+    if (loc.y >= height){
+      return true;
+    }else{
+      return false;
+    }
+  }
+}}
