@@ -1,9 +1,5 @@
-//define the number of raindrops the code will produce
-int count = 1;
-
-PVector mouse;   //declare a vector at the mouse
-
-//Raindrop [] r = new Raindrop[count];      //declare a new Raindrop called r
+//declare integers for the person's health, what menu is open, and what score is seen
+int menu, health, score;
 
 ArrayList<Raindrop> r = new ArrayList<Raindrop>();
 
@@ -11,19 +7,15 @@ Bucket b = new Bucket();
 
 Person p = new Person();
 
-// On your own, create an array of Raindrop objects instead of just one
-// Use the array instead of the single object
-// You can start out by just using the single Raindrop as you test
-
 
 void setup() {
   size(1200, 800);
-  mouse = new PVector();                //initialize mouse PVector. value is irrelevant since it will be set at the start of void draw(){}
   r.add(new Raindrop());
+  health = 10;
 }
 
 void draw() {
-  mouse.set(mouseX, mouseY);             //set value of mouse as mouseX,mouseY
+  //mouse.set(mouseX, mouseY);             //set value of mouse as mouseX,mouseY
 
   background(0, 200, 255);
 
@@ -39,10 +31,16 @@ void draw() {
     if (rain.isInContactWith(mouseX - (b.wd / 2), mouseX + (b.wd / 2), mouseY - (b.ht / 2), mouseY + (b.wd / 2))) {
       r.remove(i);
     }
+    if (rain.isInContactWith(p.loc.x - (p.diam / 2), p.loc.x + (p.diam / 2), p.loc.x - (p.diam / 2), p.loc.x + (p.diam / 2))) {
+      r.remove(i);
+      health --;
+    }
   }
 
+  //draw the bucket at the given location
   b.display();
 
-  p.display();  
+  //draw the 
+  p.display();
   p. move();
 }
