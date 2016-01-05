@@ -30,6 +30,8 @@ class Raindrop {
     //create method to reset the raindrops' position and speed
     vel = new PVector(0, random(-10, 10));
     loc = new PVector(random(width), -20);
+    //increase acceleration of raindrops every time they are reset
+    acc.mult(1.5);
   }
 
   void fall() {
@@ -38,7 +40,7 @@ class Raindrop {
     loc.add(vel);
   }
 
-  boolean isInContactWith(int x1, int x2, int y1, int y2) {
+  boolean isInContactWith(float x1, float x2, float y1, float y2) {
     //create boolean to return "true" if the raindrop's location lies within the four given points.
     if (loc.x >= x1 && loc.x <= x2 && loc.y >= y1 && loc.y <= y2) {
       return true;
@@ -54,5 +56,4 @@ class Raindrop {
       return false;
     }
   }
-}
 }

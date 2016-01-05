@@ -8,10 +8,10 @@ class Person {
   color c;
   
   Person(){
-    diam = 90;
-    loc = new PVector(width/2,height-diam);
+    diam = 50;
+    loc = new PVector(600,800 - diam / 2);
     vel = new PVector(0,0);
-    acc = new PVector(random(0.1),0);
+    acc = new PVector(random(-0.1,0.1),0);
     
     c = color(25,255,125);
   }
