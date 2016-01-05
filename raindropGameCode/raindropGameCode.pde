@@ -9,14 +9,22 @@ Person p = new Person();
 
 
 void setup() {
-  size(1200, 800);
-  r.add(new Raindrop());
+  //set canvas size
+  size(1200, 800);  
+  
+  //color background
+  background(0, 200, 255);
+  
+  //set initial score and health
   health = 10;
+  score = 0;
+  
+  //set initial menu to the start menu.
+  menu = 0;
 }
 
 void draw() {
-  //mouse.set(mouseX, mouseY);             //set value of mouse as mouseX,mouseY
-
+  //draw background
   background(0, 200, 255);
 
   r.add(new Raindrop());
@@ -45,4 +53,17 @@ void draw() {
 
   //cause the person to move
   p. move();
+
+  //Create scoreboard at top of screen
+  fill(255);
+  rectMode(CENTER);
+  noStroke();
+  rect(width/2, 29, 240, 60);
+  
+  //write text on scoreboard
+  textSize(20);
+  fill(0, 200, 255);
+  textMode(CENTER);
+  text("HEALTH: " + health, width/2, 15);
+  text("DROPS CAUGHT: " + score, width/2, 45);
 }
