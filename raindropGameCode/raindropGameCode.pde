@@ -40,7 +40,9 @@ void draw() {
   //draw the bucket at the given location
   b.display();
 
-  //draw the 
+  //draw the person at the given location
   p.display();
+
+  //cause the person to move
   p. move();
 }
