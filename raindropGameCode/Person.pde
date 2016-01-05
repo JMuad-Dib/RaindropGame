@@ -23,7 +23,8 @@ class Person {
   }
   
   void move(){
-    vel.add(acc);
-    loc.add(vel);
+    //create method to move the person based on their random acceleration
+    vel.add(acc); //add acceleration to the velocity
+    loc.add(vel); //add velocity to the position
   }
 }

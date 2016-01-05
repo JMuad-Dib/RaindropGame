@@ -1,53 +1,58 @@
 //declare class
 class Raindrop {
-  
+
   //declare vectors
   PVector vel, loc, acc;
-  
+
   //declare variables
   float diam;
   color c;
-  
-  Raindrop(){ //construct the raindrop object
+
+  Raindrop() { //construct the raindrop object
     diam = 30;
-    loc = new PVector(random(width),0); //define initial starting location of raindrops
-    vel = new PVector(0,random(-10,10)); //define initial speed of raindrops
-    acc = new PVector(0,.1); //define acceleration of raindrops' speed
-    
+    loc = new PVector(random(width), -20); //define initial starting location of raindrops
+    vel = new PVector(0, random(-10, 10)); //define initial speed of raindrops
+    acc = new PVector(0, .1); //define acceleration of raindrops' speed
+
     c = color(255); //define color of raindrops
   }
-  
-  void display(){
+
+  void display() {
     //color the raindrops
     fill(c);
     stroke(c);
-    ellipse(loc.x,loc.y,diam,diam);
-    triangle(loc.x - diam/2, loc.y, loc.x + diam/2, loc.y, loc.x, loc.y - diam);
-  }
-  
-  void reset() {
-    vel = new PVector(0, random(-10,10));
-    loc = new PVector(random(width), 0);
+
+    //draw the ellipse that composes the raindrops
+    ellipse(loc.x, loc.y, diam, diam);
   }
 
-  void fall(){
+  void reset() {
+    //create method to reset the raindrops' position and speed
+    vel = new PVector(0, random(-10, 10));
+    loc = new PVector(random(width), -20);
+  }
+
+  void fall() {
+    //create method to cause the raindrops to fall
     vel.add(acc);
     loc.add(vel);
   }
 
-  boolean isInContactWith(PVector mouse) {
-    if (loc.dist(mouse) < diam/2) {
+  boolean isInContactWith(int x1, int x2, int y1, int y2) {
+    //create boolean to return "true" if the raindrop's location lies within the four given points.
+    if (loc.x >= x1 && loc.x <= x2 && loc.y >= y1 && loc.y <= y2) {
       return true;
-    }else{
+    } else {
       return false;
     }
   }
-  
-  boolean onGround(){
-    if (loc.y >= height){
+
+  boolean onGround() {
+    if (loc.y >= height) {
       return true;
-    }else{
+    } else {
       return false;
     }
   }
-}}
+}
+}

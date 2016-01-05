@@ -1,7 +1,7 @@
 //define the number of raindrops the code will produce
 int count = 900;
 
-PVector mouse, posP;   //declare a vector at the mouse and another for the person's position
+PVector mouse;   //declare a vector at the mouse
 
 //Raindrop [] r = new Raindrop[count];      //declare a new Raindrop called r
 
@@ -50,7 +50,7 @@ void draw() {
   //for(int i = 0; i < count; i++){
   //  r[i].fall();         //make the raindrop fall. It should accelerate as if pulled towards the ground by earth's gravity
   //  r[i].display();      //display the raindrop
-  //  if (r[i].isInContactWith(mouse) == true) {      //check to see if the raindrop is in contact with the point represented by the PVector called mouse
+  //  if (r[i].isInContactWith(b.loc.x - (b.wd / 2), b.loc.x + (b.wd / 2), b.loc.y - (b.ht / 2), b.loc.y + (b.wd / 2)) == true) {      //check to see if the raindrop is in contact with the bucket by determining if it lies within the space occupied by the bucket
   //    r[i].reset();                         //if it is, reset the raindrop
   //  }
   //  if (r[i].loc.y > height) {     //check to see if the raindrop goes below the bottom of the screen
