@@ -7,15 +7,15 @@ class Person {
   float diam;
   color c;
 
-   //define Person class
+  //define Person class
   Person() {
     //define diameter of ellipse
     diam = 50;
-    
+
     //define variables for movement: location, velocity and acceleration
     loc = new PVector(600, 800 - diam / 2);
     vel = new PVector(0, 0);
-    acc = new PVector(random(1, 0);
+    acc = new PVector(random(1, 0));
 
     c = color(25, 255, 125);
   }
