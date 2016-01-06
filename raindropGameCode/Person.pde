@@ -15,12 +15,14 @@ class Person {
     //define variables for movement: location, velocity and acceleration
     loc = new PVector(600, 800 - diam / 2);
     vel = new PVector(0, 0);
-    acc = new PVector(random(1, 0));
+    acc = new PVector(.1, 0);
 
+    //color the person
     c = color(25, 255, 125);
   }
 
   void display() {
+    //create method to draw the person
     fill(c);
     stroke(c);
     ellipse(loc.x, loc.y, diam, diam);
