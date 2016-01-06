@@ -9,12 +9,16 @@ class Raindrop {
   color c;
 
   Raindrop() { //construct the raindrop object
+    //set raindrop diameter
     diam = 30;
+    
+    //define variables for movement: location, velocity and acceleration
     loc = new PVector(random(width), -20); //define initial starting location of raindrops
     vel = new PVector(0, random(-10, 10)); //define initial speed of raindrops
     acc = new PVector(0, .1); //define acceleration of raindrops' speed
 
-    c = color(255); //define color of raindrops
+    //define color of raindrops
+    c = color(255);
   }
 
   void display() {
@@ -50,6 +54,7 @@ class Raindrop {
   }
 
   boolean onGround() {
+    //create boolean to return "true" if the raindrop's location lies upon the lower edge of the canvas
     if (loc.y >= height) {
       return true;
     } else {

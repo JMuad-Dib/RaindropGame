@@ -2,18 +2,20 @@ class Bucket {
 
   //declare vector and variables
   PVector loc;
-  float diam;
   float c;
   float wd;
   float ht;
 
+  //declare Bucket class
   Bucket() {
-    diam = 80;
+    //define location of bucket
     loc = new PVector(mouseX, mouseY);
 
+    //define dimensions of bucket
     wd = 100;
     ht = 20;
 
+    //define color of bucket
     c = color(25, 165, 165);
   }
 
